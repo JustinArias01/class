@@ -1,0 +1,250 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Plato's Closet | Curated Fashion Collection</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style type="text/css">
+:root {
+    --primary-color: #2a2a2a;
+    --accent-color: #e63946;
+    --light-bg: #f8f9fa;
+    --transition: all 0.3s ease;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--light-bg);
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-color);
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+}
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+    background: linear-gradient(45deg, var(--primary-color), #4a4a4a);
+    color: white;
+}
+
+header h1 {
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+main {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    min-height: 70vh;
+}
+
+.product-viewer {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background: white;
+}
+
+#product {
+    position: relative;
+    padding-top: 120%;
+}
+
+#product img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+#product img.active {
+    opacity: 1;
+}
+
+.product-details {
+    padding: 1.5rem;
+}
+
+.swatches {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.swatch {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.swatch:hover {
+    transform: scale(1.1);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.swatch.active-swatch {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
+}
+
+.product-info {
+    margin-top: 2rem;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin: 1rem 0;
+}
+
+.btn {
+    background: var(--accent-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(230,57,70,0.3);
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .wrapper {
+        margin: 0;
+        box-shadow: none;
+    }
+}
+	footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--primary-color);
+    color: white;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-top: auto;
+}
+
+footer p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+</style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Plato's Closet</h1>
+            <p>Curated Sustainable Fashion</p>
+        </header>
+        
+        <main>
+            <div class="product-viewer">
+                <div id="product">
+                    <img src="images/red1.jpg" alt="Red Product Front" id="redFront" class="active">
+                    <img src="images/red2.jpg" alt="Red Product Back" id="redBack">
+                    <img src="images/blue1.jpg" alt="Blue Product Front" id="blueFront">
+                    <img src="images/blue2.jpg" alt="Blue Product Back" id="blueBack">
+                    <img src="images/green1.jpg" alt="Green Product Front" id="greenFront">
+                    <img src="images/green2.jpg" alt="Green Product Back" id="greenBack">
+                </div>
+            </div>
+            
+            <div class="product-details">
+                <h2>Premium Cotton Hoodie</h2>
+                <div class="price">$49.99</div>
+                
+                <div class="swatches">
+                    <a href="#" onclick="showColor('red'); return false;" 
+                       class="swatch" style="background-color: #ff0000;"></a>
+                    <a href="#" onclick="showColor('blue'); return false;" 
+                       class="swatch" style="background-color: #0000ff;"></a>
+                    <a href="#" onclick="showColor('green'); return false;" 
+                       class="swatch" style="background-color: #00ff00;"></a>
+                </div>
+
+                <div class="product-info">
+                    <h3>Product Details</h3>
+                    <p>Premium quality cotton blend hoodie with reinforced stitching. Features include:</p>
+                    <ul>
+                        <li>80% Organic Cotton / 20% Recycled Polyester</li>
+                        <li>Ethically produced</li>
+                        <li>Machine wash cold</li>
+                        <li>Available in multiple colors</li>
+                    </ul>
+                </div>
+
+                <button class="btn">Add to Cart</button>
+            </div>
+        </main>
+    </div>
+ <div class="wrapper">
+    
+        <footer>
+            <p>© 2025, Justin Arias. This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</p>
+        </footer>
+    </div>
+<script>
+function showColor(color) {
+    
+    document.querySelectorAll('.swatch').forEach(swatch => swatch.classList.remove('active-swatch'));
+    event.target.classList.add('active-swatch');
+    
+    
+    document.querySelectorAll('#product img').forEach(img => img.classList.remove('active'));
+    document.getElementById(`${color}Front`).classList.add('active');
+}
+
+const productDiv = document.getElementById('product');
+productDiv.addEventListener('mouseenter', function(e) {
+    const frontImg = document.querySelector('#product img.active');
+    if (frontImg && frontImg.id.includes('Front')) {
+        const backImgId = frontImg.id.replace('Front', 'Back');
+        frontImg.classList.remove('active');
+        document.getElementById(backImgId).classList.add('active');
+    }
+});
+
+productDiv.addEventListener('mouseleave', function(e) {
+    const backImg = document.querySelector('#product img.active');
+    if (backImg && backImg.id.includes('Back')) {
+        const frontImgId = backImg.id.replace('Back', 'Front');
+        backImg.classList.remove('active');
+        document.getElementById(frontImgId).classList.add('active');
+    }
+});
+</script>
+</body>
+</html>
